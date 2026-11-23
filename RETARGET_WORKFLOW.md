@@ -70,6 +70,6 @@ Night Demon (the Shadow Demon; the file is `demon-RIG.blend`) has the same rules
 `scenes/encounter/Encounter.tscn` is the main scene. It is gameplay, not an animation timeline.
 
 - Shadow Demon is a body that tracks Grapple Girl and moves toward her with velocity while Run plays. At arrival distance he stops. The clip does not carry him forward.
-- Grapple Girl finds the nearest node in the `threat` group and turns to face it every physics frame.
+- Grapple Girl finds the nearest node in the `threat` group and turns to face it every physics frame. The retarget glbs face glTF +Z. Godot's characters face −Z (`atan2(-x, -z)` in PlayerRotationComponent and EnemyRotationComponent), so each visual is yawed 180° and the same yaw formula is used.
 - Inside punch range she plays Punch. A hitbox in front of her is monitored only during the strike window.
 - Overlap with his hurtbox calls `take_hit()`. That is what plays HitFront and stops him. The punch animation cannot damage him by itself.
