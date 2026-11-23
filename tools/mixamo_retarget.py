@@ -8,10 +8,11 @@ Three corrections, chosen from the Mixamo bone name:
       is not added on top of a T-pose, so the arm angle stays accurate.
 
   offset
-      Hips, shoulders, thighs, calves, feet. The target keeps its own
-      rest direction. Only Mixamo's change from his rest is applied.
-      Shoulders use this, so a T-pose source does not lift an A-pose
-      shoulder. Legs use this, so a wider rest stance stays.
+      Hips and shoulders. The target keeps its own rest direction.
+      Only Mixamo's change from his rest is applied. Shoulders use
+      this, so a T-pose source does not lift an A-pose shoulder.
+      Thighs, calves, and feet track. Adding the rest stance on top
+      of a lifted run thigh folded the foot into the chest.
 
   spine
       Spine, neck, head. Same aim rule as track. The spine is planted
@@ -53,7 +54,7 @@ _prev_quat = {}
 
 def role_of(mixamo_name):
     name = mixamo_name.split(":")[-1]
-    if name == "Hips" or name.endswith(("Shoulder", "UpLeg", "Leg", "Foot")):
+    if name == "Hips" or name.endswith("Shoulder"):
         return "offset"
     if name.startswith("Spine") or name in ("Neck", "Head"):
         return "spine"

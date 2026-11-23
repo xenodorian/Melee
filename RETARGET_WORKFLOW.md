@@ -6,9 +6,9 @@ The tool is [mixamo_retarget.py](mixamo_retarget.py). It copies a Mixamo pose on
 
 Angles below are degrees from straight down. A T-pose arm is 90. An arm at 135 is 45 above horizontal.
 
-**Track** (upper arm, forearm, hand). The bone points the same way Mixamo's does. The only change is a roll around the bone so a flipped rest X/Z does not twist the mesh. An A-pose rest is not added on top of a T-pose, so a 135 degree arm stays 135.
+**Track** (upper arm, forearm, hand, thigh, calf, foot). The bone points the same way Mixamo's does. The only change is a roll around the bone so a flipped rest X/Z does not twist the mesh. An A-pose rest is not added on top of a T-pose, so a 135 degree arm stays 135. Thighs, calves, and feet track for the same reason. Keeping the wider rest stance stacked that angle onto a run that already lifts the thigh, and the foot folded up into the chest.
 
-**Offset** (hips, shoulders, thighs, calves, feet). The target keeps its own rest direction. Only Mixamo's change from his rest is applied. This is why Grapple Girl's shoulders stay on her rest angle instead of rising to his T-pose, and why her thighs keep the outward stance that fits her hips.
+**Offset** (hips, shoulders). The target keeps its own rest direction. Only Mixamo's change from his rest is applied. This is why Grapple Girl's shoulders stay on her rest angle instead of rising to his T-pose.
 
 **Spine** (spine, neck, head). Same aim rule as track. The first spine bone is planted on the hip's upright aim, not on the hip bone's raw axis. Grapple Girl's hip points forward. Planting the waist on that axis pitched her chest over. The waist is disconnected and placed above the hip.
 
@@ -51,7 +51,7 @@ A new model needs `armature`, `mesh`, and `bones` in a JSON file. Maps in this p
 
 Grapple Girl, Idle Inactive frame 0, after the shoulder offset: arms 8.1 and 9.5, matching Mixamo. Shoulders 53.5 and 46.4, which is her rest plus his delta, not his 78.9 and 71.8. Waist 172.7, matching. Left thigh 24.6 against his 13.4.
 
-Night Demon (the Shadow Demon; the file is `demon-RIG.blend`) has the same rules. There is no separate Shadow Demon asset. Almost every DEF bone's rest X/Z is flipped by about 180 degrees, and the upper arms are rolled about 88 degrees. Idle arms still match, 8.1 and 9.5. Shoulders stay near his rest (about 109) instead of dropping to Mixamo's. Thighs keep a wider rest. His shin rest is about 33 degrees off Mixamo's, so a rest-relative leg reads as a bent knee from the side. That is the offset rule, not a missed aim.
+Night Demon (the Shadow Demon; the file is `demon-RIG.blend`) has the same rules. There is no separate Shadow Demon asset. Almost every DEF bone's rest X/Z is flipped by about 180 degrees, and the upper arms are rolled about 88 degrees. Idle arms still match, 8.1 and 9.5. Shoulders stay near his rest (about 109) instead of dropping to Mixamo's. His shin rest aims about 33 degrees off Mixamo's. Tracking the leg, instead of adding that offset to every frame, keeps a run foot under the hip. Grapple Girl's clips were baked before this and were not exported again.
 
 ## Baked models
 
