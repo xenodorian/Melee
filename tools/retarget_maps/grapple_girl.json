@@ -1,0 +1,24 @@
+{
+  "armature": "Armature",
+  "mesh": "Character",
+  "bones": {
+    "Hip": "mixamorig:Hips",
+    "Waist": "mixamorig:Spine",
+    "Torso": "mixamorig:Spine2",
+    "Neck": "mixamorig:Neck",
+    "Head": "mixamorig:Head",
+    "Shoulder.FK.L": "mixamorig:LeftShoulder",
+    "Bicep.FK.L": "mixamorig:LeftArm",
+    "Forearm.FK.L": "mixamorig:LeftForeArm",
+    "Claw": "mixamorig:LeftHand",
+    "Shoulder.FK.R": "mixamorig:RightShoulder",
+    "Bicep.FK.R": "mixamorig:RightArm",
+    "Forearm.FK.R": "mixamorig:RightForeArm",
+    "Thigh.FK.L": "mixamorig:LeftUpLeg",
+    "Calf.FK.L": "mixamorig:LeftLeg",
+    "Foot.FK.L": "mixamorig:LeftFoot",
+    "Thigh.FK.R": "mixamorig:RightUpLeg",
+    "Calf.FK.R": "mixamorig:RightLeg",
+    "Foot.FK.R": "mixamorig:RightFoot"
+  }
+}
